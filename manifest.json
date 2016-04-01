@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "TIES Enhancement Suite - SPCPA",
+  "version": "0.2.8",
+  "description": "Some preliminary enhancements are available, including sending mass emails to parents of failing students.",
+  "permissions": [
+	"notifications"
+  ],
+  "icons": {
+    "48" : "TIES_48.png"
+  },
+  "web_accessible_resources": [
+	"email.png",
+	"loading.gif",
+	"fancybox/fancybox_overlay.png",
+	"fancybox/fancybox_sprite.png",
+	"fancybox/fancybox_loading.gif",
+	"fancybox/blank.gif",
+	"jquery-2.0.3.min.map",
+	"loadingbar.gif"
+	],
+  "content_scripts": [
+    {				
+      "matches": [
+		"https://*.tiescloud.net/toas/apps/gradebook/grades/*enu.asp*",
+		"https://*.tiescloud.net/toas/apps/gradebook/menu.asp*"		
+		],
+      "js" : [
+		"jquery-2.0.3.min.js",
+		"fancybox/jquery.fancybox.pack.js",
+		"enhancements.js"
+		],
+	  "css" : [
+		"styles.css",
+		"fancybox/jquery.fancybox.css"
+		]
+    }
+  ]
+}
